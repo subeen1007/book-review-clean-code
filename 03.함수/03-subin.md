@@ -122,21 +122,21 @@ ex) `InputStream fileOpen("MyFile")`  //String형의 파일 이름을 InputStrea
 - 이벤트 (입력 인수로 시스템 상태를 바꾸는 경우)
 ex) `void passwordAttemptFailedNtimes(int attempts)` //암호 시도 실패 N회
 
-1. 플래그 인수는 금지
+2. 플래그 인수는 금지
 - 각 플래그 값에 따라 별도의 함수를 작성하라.
 ex) `render(boolean isSuite)` → `renderForSuite()` & `renderForSingleTest()`
 
-1. 이항 함수가 적절한 경우
+3. 이항 함수가 적절한 경우
 - 인수 2개가 한 값을 표현하고, 자연적인 순서가 있는 경우
 좋은 ex) `Point p = new Point(0,0)`
 나쁜 ex) `assertEquals(expected, actual)` //자연적 순서X → expected, actual의 순서를 기억해야함
 
-1. 삼항 함수가 적절한 경우
+4. 삼항 함수가 적절한 경우
 - 부동소수점 비교
 ex) `assertEquals(1.0, amount, .001)` 
 //*double expected, double actual, double delta (델타-두 숫자가 여전히 동일한 것으로 간주되는 예상과 실제 사이의 최대 델타.)*
 
-1. 인수 객체
+5. 인수 객체
 
 인수가 2~3개가 필요하다면 독자적인 클래스 변수로 선언할 가능성을 짚어본다.
 
@@ -145,7 +145,7 @@ Circle makeCircle(double x, double y, double radius);
 Circle makeCirele(Point center, double radius);
 ```
 
-1. 동사와 키워드 
+6. 동사와 키워드 
 - 단항 함수는 함수와 인수가 동사/명사 쌍을 이뤄야 한다.
 예) `write(name)`
 - 함수 이름에 인수에 관한 키워드를 추가하라.
